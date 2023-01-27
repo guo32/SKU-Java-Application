@@ -2,23 +2,23 @@ package database;
 import java.sql.*;
 
 /*
- * µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á
+ * ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°
  */
 public class ConnectDatabase {
 	
 	public static Connection makeConnection() {
-		String url = "jdbc:mysql://localhost:3306/rentalbookdb";
-		String user = "root";
-		String password = "1234";
+		String url = "-";
+		String user = "-";
+		String password = "-";
 		Connection con = null;
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(url, user, password);
 		} catch(ClassNotFoundException ex) {
-			System.out.println("µå¶óÀÌ¹ö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("ë“œë¼ì´ë²„ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		} catch(SQLException ex) {
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á¿¡ ½ÇÆĞÇß½À´Ï´Ù.");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		
 		return con;
